@@ -16,6 +16,8 @@ const Navigation = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  const reservationUrl = "https://www.quandoo.sg/place/bodacious-bar-bistro-10887/menu";
+
   return (
     <nav className="fixed w-full bg-background/95 backdrop-blur-sm z-50 py-4 px-6 shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
@@ -30,7 +32,10 @@ const Navigation = () => {
               {item.name}
             </Link>
           ))}
-          <Button className="bg-primary hover:bg-primary-light text-white">
+          <Button 
+            className="bg-primary hover:bg-primary-light text-white"
+            onClick={() => window.open(reservationUrl, '_blank')}
+          >
             Reservations
           </Button>
         </div>
@@ -58,7 +63,10 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-primary hover:bg-primary-light text-white w-full">
+            <Button 
+              className="bg-primary hover:bg-primary-light text-white w-full"
+              onClick={() => window.open(reservationUrl, '_blank')}
+            >
               Reservations
             </Button>
           </div>

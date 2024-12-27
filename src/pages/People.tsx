@@ -12,25 +12,25 @@ const People = () => {
     {
       name: "Sarah Johnson",
       role: "Executive Chef",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      image: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
       initials: "SJ",
     },
     {
       name: "Michael Chen",
       role: "Head Sommelier",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838",
       initials: "MC",
     },
     {
       name: "Emma Rodriguez",
       role: "Restaurant Manager",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23",
       initials: "ER",
     },
     {
       name: "David Kim",
       role: "Pastry Chef",
-      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
+      image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3",
       initials: "DK",
     },
   ];
