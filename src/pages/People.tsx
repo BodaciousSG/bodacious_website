@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import TeamMember from "@/components/team/TeamMember";
+import PartnerCard from "@/components/team/PartnerCard";
+import JobCard from "@/components/team/JobCard";
 
 const People = () => {
   const teamMembers = [
     {
       name: "Sarah Johnson",
       role: "Executive Chef",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       initials: "SJ",
     },
     {
       name: "Michael Chen",
       role: "Head Sommelier",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       initials: "MC",
     },
     {
       name: "Emma Rodriguez",
       role: "Restaurant Manager",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
       initials: "ER",
     },
     {
       name: "David Kim",
       role: "Pastry Chef",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
       initials: "DK",
     },
   ];
@@ -89,22 +89,7 @@ const People = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center"
-            >
-              <Avatar className="w-32 h-32 mx-auto mb-4">
-                <AvatarImage src={member.image} alt={member.name} />
-                <AvatarFallback>{member.initials}</AvatarFallback>
-              </Avatar>
-              <h3 className="font-display font-bold text-xl mb-2">
-                {member.name}
-              </h3>
-              <p className="text-muted-foreground">{member.role}</p>
-            </motion.div>
+            <TeamMember key={member.name} {...member} index={index} />
           ))}
         </div>
       </motion.section>
@@ -121,22 +106,7 @@ const People = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>{partner.name}</CardTitle>
-                  <Badge variant="secondary">{partner.type}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{partner.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <PartnerCard key={partner.name} {...partner} index={index} />
           ))}
         </div>
       </motion.section>
@@ -164,25 +134,7 @@ const People = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {positions.map((position, index) => (
-            <motion.div
-              key={position.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    {position.title}
-                    <ArrowRight className="h-5 w-5 text-muted-foreground" />
-                  </CardTitle>
-                  <Badge variant="outline">{position.type}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{position.location}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <JobCard key={position.title} {...position} index={index} />
           ))}
         </div>
       </motion.section>
