@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Utensils, Wine, Beer } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const Menu = () => {
   const foodMenu = [
@@ -51,6 +52,7 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <PageHeader
         title="Our Menu"
         subtitle="A curated selection of dishes and beverages"

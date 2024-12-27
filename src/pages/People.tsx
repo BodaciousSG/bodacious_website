@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import TeamMember from "@/components/team/TeamMember";
 import PartnerCard from "@/components/team/PartnerCard";
 import JobCard from "@/components/team/JobCard";
+import Navigation from "@/components/Navigation";
+import PageHeader from "@/components/PageHeader";
 
 const People = () => {
   const teamMembers = [
@@ -72,6 +73,7 @@ const People = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <PageHeader
         title="Our People"
         subtitle="Meet the passionate individuals behind Bodacious and learn about opportunities to join our team."

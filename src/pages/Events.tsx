@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, CalendarCheck, CalendarX } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const Events = () => {
   const upcomingEvents = [
@@ -35,6 +36,7 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <PageHeader
         title="Events at Bodacious"
         subtitle="Join us for exclusive dining experiences and special celebrations"

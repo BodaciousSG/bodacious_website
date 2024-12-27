@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Clock } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const Contact = () => {
   const openingHours = [
@@ -13,6 +14,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <PageHeader
         title="Contact Us"
         subtitle="Get in touch with Bodacious"
