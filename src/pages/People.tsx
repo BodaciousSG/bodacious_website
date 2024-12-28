@@ -12,25 +12,25 @@ const People = () => {
     {
       name: "Sarah Johnson",
       role: "Executive Chef",
-      image: "https://media.istockphoto.com/id/489776304/photo/pretty-asian-woman-standing-outdoors.jpg?s=612x612&w=0&k=20&c=mEvCSX8_x5kZynkHO7ALzDw6fMP1xkhmy9tkrAwHSC4=",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       initials: "SJ",
     },
     {
       name: "Michael Chen",
       role: "Head Sommelier",
-      image: "https://t3.ftcdn.net/jpg/04/49/90/74/360_F_449907487_QrLn0cIQajy4fVWcQJSLDAXUBq1vvrYJ.jpg",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
       initials: "MC",
     },
     {
       name: "Emma Rodriguez",
       role: "Restaurant Manager",
-      image: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       initials: "ER",
     },
     {
       name: "David Kim",
       role: "Pastry Chef",
-      image: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       initials: "DK",
     },
   ];
