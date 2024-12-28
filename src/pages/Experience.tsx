@@ -28,6 +28,8 @@ const Experience = () => {
     },
   ];
 
+  const reservationUrl = "https://www.quandoo.sg/place/bodacious-bar-bistro-10887/menu";
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -49,7 +51,20 @@ const Experience = () => {
           ))}
         </div>
 
-        <ReservationCTA />
+        <div className="text-center mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Button 
+              className="bg-primary hover:bg-primary-light text-white text-lg px-8 py-6"
+              onClick={() => window.open(reservationUrl, '_blank')}
+            >
+              Make a Reservation
+            </Button>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

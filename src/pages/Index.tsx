@@ -2,8 +2,12 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const reservationUrl = "https://www.quandoo.sg/place/bodacious-bar-bistro-10887/menu";
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -34,7 +38,7 @@ const Index = () => {
           >
             <Button 
               className="bg-primary hover:bg-primary-light text-white text-lg px-8 py-6"
-              onClick={() => window.location.href = "https://www.quandoo.sg/place/bodacious-bar-bistro-10887/menu"}
+              onClick={() => window.open(reservationUrl, '_blank')}
             >
               Reserve a Table
             </Button>
@@ -50,7 +54,8 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors"
+            className="group p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors cursor-pointer"
+            onClick={() => navigate('/experience')}
           >
             <h3 className="text-2xl font-display font-bold text-dark mb-4">
               The Experience
@@ -68,7 +73,8 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="group p-6 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors"
+            className="group p-6 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors cursor-pointer"
+            onClick={() => navigate('/menu')}
           >
             <h3 className="text-2xl font-display font-bold text-dark mb-4">
               Our Menu
@@ -86,7 +92,8 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="group p-6 bg-dark/5 rounded-lg hover:bg-dark/10 transition-colors"
+            className="group p-6 bg-dark/5 rounded-lg hover:bg-dark/10 transition-colors cursor-pointer"
+            onClick={() => navigate('/events')}
           >
             <h3 className="text-2xl font-display font-bold text-dark mb-4">
               Special Events

@@ -12,25 +12,25 @@ const People = () => {
     {
       name: "Sarah Johnson",
       role: "Executive Chef",
-      image: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
+      image: "https://media.istockphoto.com/id/489776304/photo/pretty-asian-woman-standing-outdoors.jpg?s=612x612&w=0&k=20&c=mEvCSX8_x5kZynkHO7ALzDw6fMP1xkhmy9tkrAwHSC4=",
       initials: "SJ",
     },
     {
       name: "Michael Chen",
       role: "Head Sommelier",
-      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838",
+      image: "https://t3.ftcdn.net/jpg/04/49/90/74/360_F_449907487_QrLn0cIQajy4fVWcQJSLDAXUBq1vvrYJ.jpg",
       initials: "MC",
     },
     {
       name: "Emma Rodriguez",
       role: "Restaurant Manager",
-      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23",
+      image: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
       initials: "ER",
     },
     {
       name: "David Kim",
       role: "Pastry Chef",
-      image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3",
+      image: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
       initials: "DK",
     },
   ];
@@ -70,6 +70,10 @@ const People = () => {
       location: "Front of House",
     },
   ];
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:bodacioussg@gmail.com";
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -129,14 +133,16 @@ const People = () => {
             experiences. We're always looking for talented individuals who share our
             values and dedication to excellence.
           </p>
-          <Button className="mb-12" size="lg">
+          <Button className="mb-12" size="lg" onClick={handleEmailClick}>
             <Mail className="mr-2" />
             Send us your CV
           </Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {positions.map((position, index) => (
-            <JobCard key={position.title} {...position} index={index} />
+            <div key={position.title} className="cursor-pointer" onClick={handleEmailClick}>
+              <JobCard {...position} index={index} />
+            </div>
           ))}
         </div>
       </motion.section>
