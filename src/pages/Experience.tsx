@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import PageHeader from "@/components/PageHeader";
 import ExperienceCard from "@/components/ExperienceCard";
-import ReservationCTA from "@/components/ReservationCTA";
+import { Button } from "@/components/ui/button";  // Add this import
 
 const Experience = () => {
   const experiences = [
