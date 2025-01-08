@@ -6,7 +6,7 @@ import PageHeader from "@/components/PageHeader";
 const About = () => {
   const approaches = [
     {
-      title: "bold Flavors",
+      title: "Bold Flavors",
       description:
         "We believe in creating dishes that make a statement, combining unexpected ingredients with classic techniques.",
     },
