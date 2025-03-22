@@ -189,13 +189,13 @@ const Index = () => {
                   <Input placeholder="Name" />
                 </div>
                 <div>
-                  <Input type="email" placeholder="Email" />
+                  <Input type="email" placeholder="Email Address" />
                 </div>
                 <div>
-                  <Input placeholder="Subject" />
+                  <Input placeholder="Contact Number" />
                 </div>
                 <div>
-                  <Textarea placeholder="Your message" className="h-32" />
+                  <Textarea placeholder="Your Message" className="h-32" />
                 </div>
                 <Button type="submit" className="w-full">
                   Send Message

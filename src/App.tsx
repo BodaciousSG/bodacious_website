@@ -11,6 +11,7 @@ import Menu from "./pages/Menu";
 import Contact from "./pages/Contact";
 import Reservations from "./pages/Reservations";
 import Partners from "./pages/Partners";
+import Spaces from "./pages/Spaces";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/people" element={<People />} />
             <Route path="/events" element={<Events />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/spaces" element={<Spaces />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reservations" element={<Reservations />} />
