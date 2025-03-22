@@ -8,31 +8,42 @@ import Navigation from "@/components/Navigation";
 import PageHeader from "@/components/PageHeader";
 
 const People = () => {
+  // Placeholder data - replace with actual data
+  const founders = [
+    {
+      name: "Founder Name 1",
+      role: "Founder & CEO",
+      image: "/images/founder1.jpg"
+    },
+    {
+      name: "Founder Name 2",
+      role: "Founder & Creative Director",
+      image: "/images/founder2.jpg"
+    }
+  ];
+
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "Executive Chef",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      initials: "SJ",
-    },
+      name: "Team Member Name",
+      role: "Team Role",
+      image: "/images/team-member.jpg"
+    }
+  ];
+
+  const frontOfHouse = [
     {
-      name: "Michael Chen",
-      role: "Head Sommelier",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      initials: "MC",
-    },
+      name: "Staff Name",
+      role: "Front of House Role",
+      image: "/images/staff1.jpg"
+    }
+  ];
+
+  const backOfHouse = [
     {
-      name: "Emma Rodriguez",
-      role: "Restaurant Manager",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      initials: "ER",
-    },
-    {
-      name: "David Kim",
-      role: "Pastry Chef",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      initials: "DK",
-    },
+      name: "Staff Name",
+      role: "Back of House Role",
+      image: "/images/staff2.jpg"
+    }
   ];
 
   const partners = [
@@ -76,76 +87,141 @@ const People = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
-      <PageHeader
-        title="Our People"
-        subtitle="Meet the passionate individuals behind Bodacious and learn about opportunities to join our team."
-      />
-
-      {/* Team Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="container mx-auto px-4 py-12"
-      >
-        <h2 className="text-3xl font-display font-bold text-center mb-12">
-          The Bodacious Team
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <TeamMember key={member.name} {...member} index={index} />
-          ))}
+      
+      {/* The Team Behind Section */}
+      <section className="py-20 mb-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-12">
+            The Team Behind
+          </h1>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg text-gray-700 mb-8">
+              Meet the passionate individuals who make Bodacious more than just a restaurant - 
+              we're a family dedicated to creating extraordinary dining experiences.
+            </p>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Partners Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="container mx-auto px-4 py-12 bg-accent/20"
-      >
-        <h2 className="text-3xl font-display font-bold text-center mb-12">
-          Our Partners
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {partners.map((partner, index) => (
-            <PartnerCard key={partner.name} {...partner} index={index} />
-          ))}
+      {/* Our Founders Section */}
+      <section className="py-20 mb-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
+            Our Founders
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {founders.map((founder, index) => (
+              <div key={index} className="text-center">
+                <div className="aspect-square w-full max-w-md mx-auto mb-6 bg-gray-200 rounded-lg overflow-hidden">
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
+                <p className="text-gray-600">{founder.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Work with Us Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="container mx-auto px-4 py-12"
-      >
-        <h2 className="text-3xl font-display font-bold text-center mb-12">
-          Work with Us
-        </h2>
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <p className="text-lg text-muted-foreground mb-6">
-            Join our passionate team and be part of creating extraordinary dining
-            experiences. We're always looking for talented individuals who share our
-            values and dedication to excellence.
-          </p>
-          <Button className="mb-12" size="lg" onClick={handleEmailClick}>
-            <Mail className="mr-2" />
-            Send us your CV
-          </Button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {positions.map((position, index) => (
-            <div key={position.title} className="cursor-pointer" onClick={handleEmailClick}>
-              <JobCard {...position} index={index} />
+      {/* The Team Section */}
+      <section className="py-20 mb-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
+            The Team
+          </h2>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 place-items-center">
+              <div className="md:col-start-2">
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="text-center w-full max-w-md">
+                    <div className="aspect-square w-full bg-gray-200 rounded-lg overflow-hidden mb-4">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-gray-600">{member.role}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* Our Driving Force Section */}
+      <section className="py-20 mb-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+            Our Driving Force
+          </h2>
+          
+          {/* Front of House */}
+          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto mb-16">
+            <div>
+              <h3 className="text-2xl font-bold mb-8">Our Front of House</h3>
+              <div className="grid gap-8">
+                {frontOfHouse.map((staff, index) => (
+                  <div key={index} className="flex items-center gap-4">
+                    <div className="w-20 h-20 bg-gray-200 rounded-full overflow-hidden">
+                      <img
+                        src={staff.image}
+                        alt={staff.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{staff.name}</h4>
+                      <p className="text-gray-600">{staff.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Back of House */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8">Our Back of House</h3>
+              <div className="grid gap-8">
+                {backOfHouse.map((staff, index) => (
+                  <div key={index} className="flex items-center gap-4">
+                    <div className="w-20 h-20 bg-gray-200 rounded-full overflow-hidden">
+                      <img
+                        src={staff.image}
+                        alt={staff.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{staff.name}</h4>
+                      <p className="text-gray-600">{staff.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Work with Us Button */}
+          <div className="text-center">
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6"
+              onClick={() => window.location.href = '/careers'}
+            >
+              Work with Us
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
